@@ -5,6 +5,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Document</title>
+ <link rel="stylesheet" href="styles.css">
 </head>
 <body>
  <div class="form-container">
@@ -15,20 +16,23 @@
 
     <!-- Registration Form -->
     <form id="registration">
-      <input name="username" type="text" placeholder="Username" />
+      <input oninput="validateUsername()" minlength="4"
+       name="username" id="username" type="text" placeholder="Username" required/>
       <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
 
-      <input name="email" type="text" placeholder="Email" />
+      <input name="email" id="email" type="email" placeholder="Email" required />
       <span class="input-icon"><i class="fa-solid fa-envelope"></i></span
       ><br />
 
-      <input name="password" type="text" placeholder="Password" />
+      <input name="password" id="password" type="password" placeholder="Password" required/>
       <span class="input-icon"><i class="fa-solid fa-key"></i></span><br />
 
       <input
         name="passwordCheck"
+        id="passwordCheck"
         type="text"
         placeholder="Repeat Password"
+        required
       />
       <span class="input-icon"><i class="fa-solid fa-key"></i></span
       ><br /><br />
@@ -50,10 +54,10 @@
 
     <!-- Login Form -->
     <form id="login" style="border-bottom: 1px solid lightgray;">
-      <input name="username" type="text" placeholder="Username" />
+      <input name="username" id="usernameSuccess" type="text" placeholder="Username" required/>
       <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
 
-      <input name="password" type="text" placeholder="Password" />
+      <input name="password" id="passwordSuccess" type="text" placeholder="Password" required/>
       <span class="input-icon"><i class="fa-solid fa-key"></i></span
       ><br /><br />
 
