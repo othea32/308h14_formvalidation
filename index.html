@@ -5,9 +5,14 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Document</title>
+ <script
+      src="https://kit.fontawesome.com/d8f052c6cf.js"
+      crossorigin="anonymous"
+    ></script>
  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+ <!-- Container for entire form. -->
  <div class="form-container">
   <!-- Registration Side -->
   <div>
@@ -16,32 +21,21 @@
 
     <!-- Registration Form -->
     <form id="registration">
-      <input oninput="validateUsername()" minlength="4"
-       name="username" id="username" type="text" placeholder="Username" required/>
+      <input name="username" type="text" placeholder="Username" required minlength="4" pattern="^[a-zA-Z0-9]+$" />
       <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
 
-      <input name="email" id="email" type="email" placeholder="Email" required />
-      <span class="input-icon"><i class="fa-solid fa-envelope"></i></span
-      ><br />
+      <input name="email" type="email" placeholder="Email" required pattern="^(?!.*example\.com).*$" />
+      <span class="input-icon"><i class="fa-solid fa-envelope"></i></span><br />
 
-      <input name="password" id="password" type="password" placeholder="Password" required/>
+      <input name="password" type="password" placeholder="Password" required minlength="12" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$" />
       <span class="input-icon"><i class="fa-solid fa-key"></i></span><br />
 
-      <input
-        name="passwordCheck"
-        id="passwordCheck"
-        type="text"
-        placeholder="Repeat Password"
-        required
-      />
-      <span class="input-icon"><i class="fa-solid fa-key"></i></span
-      ><br /><br />
+      <input name="passwordCheck" type="password" placeholder="Repeat Password" required />
+      <span class="input-icon"><i class="fa-solid fa-key"></i></span><br /><br />
 
       <div class="flex-row">
-        <input name="terms" type="checkbox" />
-        <label for="terms"
-          >I agree to the&nbsp;<a href="#">Terms of Use</a>.</label
-        >
+        <input name="terms" type="checkbox" required />
+        <label for="terms">I agree to the&nbsp;<a href="#">Terms of Use</a>.</label>
         <input type="submit" value="Register" />
       </div>
     </form>
@@ -54,12 +48,11 @@
 
     <!-- Login Form -->
     <form id="login" style="border-bottom: 1px solid lightgray;">
-      <input name="username" id="usernameSuccess" type="text" placeholder="Username" required/>
+      <input name="usernameLogin" type="text" placeholder="Username" required minlength="4" pattern="^[a-zA-Z0-9]+$" />
       <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
 
-      <input name="password" id="passwordSuccess" type="text" placeholder="Password" required/>
-      <span class="input-icon"><i class="fa-solid fa-key"></i></span
-      ><br /><br />
+      <input name="passwordLogin" type="password" placeholder="Password" required minlength="12" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$" />
+      <span class="input-icon"><i class="fa-solid fa-key"></i></span><br /><br />
 
       <div class="flex-row">
         <input name="persist" type="checkbox" />
